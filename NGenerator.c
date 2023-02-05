@@ -25,10 +25,12 @@
 int main()
 {
 	mpz_t e ;mpz_init(e);
-        generer_premier_fermat(100, e);
+	
+        //generer_premier_fermat(1024, e);
+        generer_premier_solovay(700,e);
         PRINT(e);
-        int x = pgp_test_fermat(e);
-        printf("res %d\n", x);
+        //int x = pgp_test_fermat(e);
+        //printf("res %d\n", x);
         
         
 
