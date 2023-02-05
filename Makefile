@@ -1,5 +1,5 @@
-OPTIONS= -O3 -std=c99 -g -lm -lgmp
-WARNINGS= -Wall -pedantic -Wextra
+OPTIONS=  -std=c99 -g -lm -lgmp
+
 OPTIONS+= $(WARNINGS)
 OPTIONS+= $(MACROS)
 NGenerator : NGenerator.o fonctions.o
