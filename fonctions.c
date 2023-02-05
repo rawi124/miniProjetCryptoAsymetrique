@@ -55,12 +55,12 @@ int test_primalite_fermat(mpz_t N)
 }
 
 
-int generer_premier_fermat(int n)
+void generer_premier_fermat(int n, mpz_t e )
 {
 	/*
-	genere un entier premier de n bits
+	genere un entier premier de n bits et l affecte a e
 	*/
-	mpz_t e ;
+	
 	gmp_randstate_t etat; 
     	gmp_randinit_default (etat);
     	gmp_randseed_ui(etat, time(NULL));//pour avoir un entier different a chaque execution 
@@ -68,15 +68,36 @@ int generer_premier_fermat(int n)
 	mpz_urandomb(e, etat, N);//generer un entier  de N bits
 	
 	int x = test_primalite_fermat(e);
-	gmp_printf("Le nombre alea : %Zd la fonction renvoie %d\n",e,x);
+	//gmp_printf("Le nombre alea : %Zd la fonction renvoie %d\n",e,x);
 	while(x != 1)
 	{
 		mpz_urandomb(e, etat, N);
 		x = test_primalite_fermat(e);
-		gmp_printf("Le nombre alea : %Zd la fonction renvoie %d\n",e,x);
+		//gmp_printf("Le nombre alea : %Zd la fonction renvoie %d\n",e,x);
 	}
-        
-	return e ;
+
+}
+
+int pgp_test_fermat(mpz_t e)
+{
+	mpz_t un, deux, trois, cinques, septs, e_1, res_2, res_3, res_5, res_7; 
+	mpz_init(e_1);
+	init_mpz(1, un);//affecte l entier 1 a l mpz_t un 
+	mpz_sub (e_1, e, un);//e_1 = e - 1
+	
+	mpz_init_set_ui(deux, 2);
+	mpz_init_set_ui(trois, 3);
+	mpz_init_set_ui(cinques, 5);
+	mpz_init_set_ui(septs, 7);
+	mpz_init(res_2);mpz_init(res_3);mpz_init(res_5);mpz_init(res_7);
+	
+	mpz_powm (res_2, deux, e_1, e);
+	mpz_powm (res_3, trois, e_1, e);
+	mpz_powm (res_5, cinques, e_1, e);
+	mpz_powm (res_7, septs, e_1, e);
+	
+	return mpz_cmp(res_2, res_3) == 0 && mpz_cmp(res_5, res_7) == 0 && mpz_cmp(res_2, res_7) == 0  ;
+	
 }
 
 

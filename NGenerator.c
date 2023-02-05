@@ -24,8 +24,12 @@
 
 int main()
 {
-
-        generer_premier_fermat(10);
+	mpz_t e ;mpz_init(e);
+        generer_premier_fermat(100, e);
+        PRINT(e);
+        int x = pgp_test_fermat(e);
+        printf("res %d\n", x);
+        
         
 
 

@@ -15,6 +15,7 @@ void alea_mpz(mpz_t n, mpz_t e);
 
 int test_primalite_fermat(mpz_t N);
 
-int generer_premier_fermat(int n);
+void generer_premier_fermat(int n, mpz_t e );
+int pgp_test_fermat(mpz_t e);
 
 #endif
