@@ -2,13 +2,13 @@ OPTIONS=  -std=c99 -g -lm -lgmp
 
 OPTIONS+= $(WARNINGS)
 OPTIONS+= $(MACROS)
-NGenerator : NGenerator.o fonctions.o
-	gcc -o NGenerator NGenerator.o fonctions.o $(OPTIONS)
+NGenerator : NGenerator.o premier.o
+	gcc -o NGenerator NGenerator.o premier.o $(OPTIONS)
 
-fonctions.o : fonctions.c fonctions.h
-	gcc -c fonctions.c $(OPTIONS)
+premier.o : premier.c premier.h
+	gcc -c premier.c $(OPTIONS)
 
-NGenerator.o : fonctions.o
+NGenerator.o : premier.o
 	gcc -c NGenerator.c $(OPTIONS)
 
 all : NGenerator

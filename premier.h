@@ -1,6 +1,6 @@
 
-#ifndef FONCTIONS_H
-#define FONCTIONS_H
+#ifndef PREMIER_H
+#define PREMIER_H
 
 #include <inttypes.h>
 #include <gmp.h>

@@ -1,4 +1,4 @@
-#include "fonctions.h"
+#include "premier.h"
 #include <gmp.h>
 #include <time.h>
 

@@ -10,7 +10,7 @@
 #include <gmp.h>
 #include <math.h>
 #include <inttypes.h>
-#include "fonctions.h"
+#include "premier.h"
 
 
 #define PRINT(e)  gmp_printf("Le nombre a afficher : %Zd\n",e);
