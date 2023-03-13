@@ -137,7 +137,7 @@ void generer_premier_fermat(int n, mpz_t e )
 
 
 
-int pgp_test_fermat(mpz_t e)
+int pgp_test(mpz_t e)
 {
 	/*
 	effectue le test pgp avec les 4 premiers nombres premiers 2, 3, 5, 7

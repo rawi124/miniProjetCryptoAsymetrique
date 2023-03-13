@@ -17,7 +17,7 @@ int test_primalite_fermat(mpz_t N);
 
 void generer_premier_fermat(int n, mpz_t e );
 
-int pgp_test_fermat(mpz_t e);
+int pgp_test(mpz_t e);
 
 void generer_premier_solovay(int n, mpz_t e );
 
