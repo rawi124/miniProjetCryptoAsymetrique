@@ -6,3 +6,5 @@ generer des nombres premiers en utilisant la bibliotheque GMP, pour tester : mak
 effectue une attaque type SPA
 ## DPA
 partie dpa en cours 
+
+pour plus d'informations, se rendre sur le pdf rendu.pdf
